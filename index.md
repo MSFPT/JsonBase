@@ -1,37 +1,110 @@
-## Welcome to GitHub Pages
+# JsonBase
 
-You can use the [editor on GitHub](https://github.com/MSFPT/JsonBase/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+[![Python](https://img.shields.io/badge/python-3-blue)](https://python.org)
+[![Ruby](https://img.shields.io/badge/ruby-2-red)](https://ruby-lang.org)
+[![PHP](https://img.shields.io/badge/php-8-purple)](https://php.net)
+![Level](https://img.shields.io/badge/Level-Easy-cyan)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Jason's tiny database
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## Clone from GitHub
+```bash
+git clone https://github.com/MSFPT/JsonBase
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+<br>
 
-### Jekyll Themes
+### Types Run
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MSFPT/JsonBase/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+<br>
 
-### Support or Contact
+#### python
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<br>
+
+```python
+from JsonBase.python import JsonBase
+
+DATABASE = JsonBase('./JsonBase/db.json')
+
+# * GET DATA AND COMMIT *
+@DATABASE.get
+def GetData(data):
+  data['github'] = 'https://github.com/MSFPT/JsonBase'
+  DATABASE.commit()
+
+# OR
+
+ data = DATABASE.get()
+ data['github'] = 'https://github.com/MSFPT/JsonBase'
+ DATABASE.commit()
+
+# * CLEAR a DATABASE *
+DATABASE.clear()
+
+# * WRITE in DATABASE *
+DATABASE.write(db)
+
+```
+
+<br>
+
+#### Ruby
+
+<br>
+
+```ruby
+from JsonBase.python import JsonBase
+
+require './JsonBase/ruby/JsonBase.rb'
+
+$db = JsonBase. new './JsonBase/db.json'
+
+# * GET DATA AND COMMIT *
+data = $db.get
+data['name'] = "Ангел"
+$db.commit data
+
+# * CLEAR a DATABASE *
+$db.clear
+
+# * WRITE in DATABASE *
+$db.commit {name: 'Люцифер'}
+
+```
+
+
+<br>
+
+#### PHP
+
+<br>
+
+```php
+<?php
+
+  require('./JsonBase/php/JsonBase.php');
+
+  $db = new JsonBase('./JsonBase/db.json');
+  
+  # * GET DATA AND COMMIT *
+
+  $data = $db->get();
+  $data['name'] = 'Ангел';
+  $db->commit($data);
+  
+  # * CLEAR a DATABASE *
+  $db->clear();
+  
+  # * WRITE in DATABASE *
+  $db->commit(array("name"=>"Люцифер"));
+
+?>
+```
+
+<br>
+<br>
+
+<center>
+ I also write in other langs ​​soon :)
+<center>

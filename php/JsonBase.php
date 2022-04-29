@@ -9,6 +9,8 @@
     public $file_db;
 
     public function __construct(string $file){
+      
+      if (!file_exists($file)) { $log = fopen($file,'w+');fwrite($log, '');fclose($log); }
 
       $this->file_db = $file;
     

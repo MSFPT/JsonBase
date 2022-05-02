@@ -83,7 +83,11 @@ $db.commit {name: 'Люцифер'}
 ```php
 <?php
 
-  require('./JsonBase/php/JsonBase.php');
+  if (!file_exists('JsonBase.php')) {
+    copy('https://raw.githubusercontent.com/MSFPT/JsonBase/main/php/JsonBase.php', 'JsonBase.php');
+  }
+
+  require('JsonBase.php');
 
   $db = new JsonBase('./JsonBase/db.json');
   

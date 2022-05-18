@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/python-3-blue)](https://python.org)
 [![Ruby](https://img.shields.io/badge/ruby-2-red)](https://ruby-lang.org)
 [![PHP](https://img.shields.io/badge/php-8-purple)](https://php.net)
-![Level](https://img.shields.io/badge/Level-Easy-cyan)
+<!-- ![Level](https://img.shields.io/badge/Level-Easy-cyan) -->
 
 Jason's tiny database
 

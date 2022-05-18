@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/python-3-blue)](https://python.org)
 [![Ruby](https://img.shields.io/badge/ruby-2-red)](https://ruby-lang.org)
 [![PHP](https://img.shields.io/badge/php-8-purple)](https://php.net)
-![Level](https://img.shields.io/badge/Level-Easy-cyan)
+<!-- ![Level](https://img.shields.io/badge/Level-Easy-cyan) -->
 
 Jason's tiny database
 
@@ -83,7 +83,11 @@ $db.commit {name: 'Люцифер'}
 ```php
 <?php
 
-  require('./JsonBase/php/JsonBase.php');
+  if (!file_exists('JsonBase.php')) {
+    copy('https://raw.githubusercontent.com/MSFPT/JsonBase/main/php/JsonBase.php', 'JsonBase.php');
+  }
+
+  require('JsonBase.php');
 
   $db = new JsonBase('./JsonBase/db.json');
   
